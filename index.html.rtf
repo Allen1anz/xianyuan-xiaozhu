@@ -1,0 +1,436 @@
+{\rtf1\ansi\ansicpg936\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="zh-CN">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">\
+    <title>\uc0\u34900 \u36828 \u23567 \u31569  - \u24314 \u31569 \u26234 \u33021 \u21161 \u25163 </title>\
+    <style>\
+        * \{\
+            margin: 0;\
+            padding: 0;\
+            box-sizing: border-box;\
+        \}\
+        \
+        :root \{\
+            --bg: #FAFAFA;\
+            --card: #FFFFFF;\
+            --text: #111827;\
+            --text-secondary: #6B7280;\
+            --text-hint: #9CA3AF;\
+            --border: #F3F4F6;\
+            --brand: #2563EB;\
+            --radius: 8px;\
+        \}\
+        \
+        body \{\
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\
+            background: var(--bg);\
+            color: var(--text);\
+            line-height: 1.6;\
+            max-width: 480px;\
+            margin: 0 auto;\
+            min-height: 100vh;\
+        \}\
+        \
+        /* \uc0\u39030 \u37096 \u23548 \u33322  */\
+        .header \{\
+            background: var(--card);\
+            padding: 12px 16px;\
+            display: flex;\
+            align-items: center;\
+            justify-content: space-between;\
+            border-bottom: 1px solid var(--border);\
+            position: sticky;\
+            top: 0;\
+            z-index: 100;\
+        \}\
+        \
+        .header-left, .header-right \{\
+            display: flex;\
+            align-items: center;\
+            gap: 16px;\
+            min-width: 60px;\
+        \}\
+        \
+        .header-title \{\
+            font-size: 18px;\
+            font-weight: 600;\
+            flex: 1;\
+            text-align: center;\
+        \}\
+        \
+        .icon-btn \{\
+            width: 24px;\
+            height: 24px;\
+            display: flex;\
+            align-items: center;\
+            justify-content: center;\
+            cursor: pointer;\
+        \}\
+        \
+        /* \uc0\u20027 \u20869 \u23481 \u21306  */\
+        .main-content \{\
+            padding-bottom: 140px;\
+        \}\
+        \
+        /* \uc0\u27426 \u36814 \u21306  */\
+        .welcome-section \{\
+            padding: 24px 16px;\
+            display: flex;\
+            align-items: flex-start;\
+            gap: 12px;\
+        \}\
+        \
+        .avatar \{\
+            width: 48px;\
+            height: 48px;\
+            border-radius: 50%;\
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\
+            display: flex;\
+            align-items: center;\
+            justify-content: center;\
+            font-size: 24px;\
+            flex-shrink: 0;\
+        \}\
+        \
+        .welcome-text \{\
+            font-size: 15px;\
+            color: var(--text-secondary);\
+            line-height: 1.8;\
+        \}\
+        \
+        /* \uc0\u24555 \u25463 \u38382 \u39064 \u21015 \u34920  */\
+        .quick-list \{\
+            background: var(--card);\
+        \}\
+        \
+        .quick-item \{\
+            padding: 18px 16px;\
+            font-size: 16px;\
+            color: var(--text);\
+            border-bottom: 1px solid var(--border);\
+            display: flex;\
+            justify-content: space-between;\
+            align-items: center;\
+            cursor: pointer;\
+            transition: background 0.2s;\
+        \}\
+        \
+        .quick-item:hover \{\
+            background: var(--bg);\
+        \}\
+        \
+        .quick-item::after \{\
+            content: '\'9b';\
+            color: var(--text-hint);\
+            font-size: 20px;\
+        \}\
+        \
+        /* \uc0\u24213 \u37096 \u21306 \u22495  */\
+        .bottom-section \{\
+            position: fixed;\
+            bottom: 0;\
+            left: 0;\
+            right: 0;\
+            background: var(--card);\
+            max-width: 480px;\
+            margin: 0 auto;\
+        \}\
+        \
+        /* Tab\uc0\u26639  */\
+        .tab-bar \{\
+            display: flex;\
+            border-bottom: 1px solid var(--border);\
+        \}\
+        \
+        .tab \{\
+            flex: 1;\
+            text-align: center;\
+            padding: 14px 0;\
+            font-size: 15px;\
+            color: var(--text-secondary);\
+            cursor: pointer;\
+            position: relative;\
+        \}\
+        \
+        .tab.active \{\
+            color: var(--text);\
+            font-weight: 600;\
+        \}\
+        \
+        .tab.active::after \{\
+            content: '';\
+            position: absolute;\
+            bottom: 0;\
+            left: 50%;\
+            transform: translateX(-50%);\
+            width: 24px;\
+            height: 2px;\
+            background: var(--brand);\
+        \}\
+        \
+        /* \uc0\u36755 \u20837 \u26639  */\
+        .input-bar \{\
+            padding: 12px 16px;\
+            display: flex;\
+            align-items: center;\
+            gap: 12px;\
+        \}\
+        \
+        .input-wrapper \{\
+            flex: 1;\
+            display: flex;\
+            align-items: center;\
+            gap: 10px;\
+        \}\
+        \
+        .input-wrapper input \{\
+            flex: 1;\
+            border: none;\
+            background: transparent;\
+            font-size: 16px;\
+            color: var(--text);\
+            outline: none;\
+        \}\
+        \
+        .input-wrapper input::placeholder \{\
+            color: var(--text-hint);\
+        \}\
+        \
+        .icon-camera, .icon-mic \{\
+            width: 24px;\
+            height: 24px;\
+            color: var(--text-secondary);\
+            cursor: pointer;\
+        \}\
+        \
+        /* \uc0\u20813 \u36131 \u22768 \u26126  */\
+        .disclaimer \{\
+            text-align: center;\
+            padding: 8px;\
+            font-size: 12px;\
+            color: var(--text-hint);\
+        \}\
+        \
+        /* \uc0\u39029 \u38754 \u20999 \u25442  */\
+        .page \{\
+            display: none;\
+        \}\
+        \
+        .page.active \{\
+            display: block;\
+        \}\
+        \
+        /* \uc0\u36136 \u37327 \u26816 \u26597 \u39029 \u38754  */\
+        .form-page \{\
+            background: var(--card);\
+            min-height: calc(100vh - 60px);\
+        \}\
+        \
+        .form-header \{\
+            padding: 16px;\
+            border-bottom: 1px solid var(--border);\
+        \}\
+        \
+        .filter-dropdown \{\
+            display: flex;\
+            align-items: center;\
+            gap: 4px;\
+            font-size: 15px;\
+            color: var(--text);\
+            font-weight: 500;\
+        \}\
+        \
+        .form-section \{\
+            padding: 20px 16px;\
+            border-bottom: 1px solid var(--border);\
+        \}\
+        \
+        .form-label \{\
+            font-size: 14px;\
+            color: var(--text-secondary);\
+            margin-bottom: 12px;\
+        \}\
+        \
+        .form-value \{\
+            font-size: 17px;\
+            color: var(--text);\
+            font-weight: 500;\
+        \}\
+        \
+        .upload-box \{\
+            width: 80px;\
+            height: 80px;\
+            border: 1px dashed var(--text-hint);\
+            border-radius: var(--radius);\
+            display: flex;\
+            align-items: center;\
+            justify-content: center;\
+            color: var(--text-hint);\
+            font-size: 24px;\
+        \}\
+        \
+        /* \uc0\u21709 \u24212 \u24335  - \u30005 \u33041 \u31471  */\
+        @media (min-width: 768px) \{\
+            body \{\
+                max-width: 100%;\
+            \}\
+            \
+            .mobile-container \{\
+                max-width: 414px;\
+                margin: 0 auto;\
+                background: var(--bg);\
+                min-height: 100vh;\
+                box-shadow: 0 0 20px rgba(0,0,0,0.1);\
+            \}\
+            \
+            .bottom-section \{\
+                max-width: 414px;\
+            \}\
+        \}\
+    </style>\
+</head>\
+<body>\
+    <div class="mobile-container">\
+        <!-- \uc0\u30693 \u35782 \u38382 \u31572 \u39029 \u38754  -->\
+        <div id="chat-page" class="page active">\
+            <header class="header">\
+                <div class="header-left">\
+                    <span class="icon-btn">\uc0\u9776 </span>\
+                </div>\
+                <h1 class="header-title">\uc0\u30693 \u35782 \u38382 \u31572 </h1>\
+                <div class="header-right">\
+                    <span class="icon-btn">\'b7\'b7\'b7</span>\
+                    <span class="icon-btn">\uc0\u9472 </span>\
+                    <span class="icon-btn">\uc0\u9675 </span>\
+                </div>\
+            </header>\
+            \
+            <main class="main-content">\
+                <div class="welcome-section">\
+                    <div class="avatar">\uc0\u55357 \u56439 </div>\
+                    <p class="welcome-text">\uc0\u25105 \u26159 \u24744 \u30340 \u19987 \u23646 \u24314 \u31569 \u26234 \u33021 \u20307 \u65292 <br>\u26377 \u20160 \u20040 \u21487 \u20197 \u24110 \u24744 \u30340 \u65311 </p>\
+                </div>\
+                \
+                <div class="quick-list">\
+                    <div class="quick-item">\uc0\u36827 \u24230 \u24310 \u26399 \u38656 \u35201 \u24590 \u20040 \u22788 \u29702 \u65311 </div>\
+                    <div class="quick-item">\uc0\u36229 8\u31859 \u30340 \u33050 \u25163 \u26550 \u24037 \u31243 \u38656 \u35201 \u32534 \u21046 \u21738 \u20123 \u21361 \u22823 \u25991 \u20214 \u65311 </div>\
+                    <div class="quick-item">\uc0\u34562 \u31389 \u40635 \u38754 \u24590 \u20040 \u22788 \u29702 \u65311 </div>\
+                </div>\
+            </main>\
+        </div>\
+        \
+        <!-- \uc0\u36136 \u37327 \u26816 \u26597 \u39029 \u38754  -->\
+        <div id="form-page" class="page">\
+            <header class="header">\
+                <div class="header-left">\
+                    <span class="icon-btn">\'d7</span>\
+                    <span class="icon-btn">\'b7\'b7\'b7</span>\
+                </div>\
+                <h1 class="header-title">\uc0\u36136 \u37327 \u26816 \u26597 </h1>\
+                <div class="header-right">\
+                    <span class="icon-btn">\'b7\'b7\'b7</span>\
+                    <span class="icon-btn">\uc0\u9472 </span>\
+                    <span class="icon-btn">\uc0\u9675 </span>\
+                </div>\
+            </header>\
+            \
+            <main class="form-page">\
+                <div class="form-header">\
+                    <div class="filter-dropdown">\
+                        \uc0\u36817 \u19968 \u20010 \u26376  <span>\u9660 </span>\
+                    </div>\
+                </div>\
+                \
+                <div class="form-section">\
+                    <div class="form-label">\uc0\u36136 \u37327 \u26816 \u26597 \u29031 \u29255 </div>\
+                    <div class="upload-box">+</div>\
+                </div>\
+                \
+                <div class="form-section">\
+                    <div class="form-label">\uc0\u38382 \u39064 \u37096 \u20301 </div>\
+                    <div class="form-value">3\uc0\u21495 \u27004 5\u23618 \u22681 \u38754 </div>\
+                </div>\
+                \
+                <div class="form-section">\
+                    <div class="form-label">\uc0\u38382 \u39064 \u25551 \u36848 </div>\
+                    <div class="form-value">\uc0\u22681 \u38754 \u36215 \u30382 \u34562 \u31389 \u40635 \u38754 </div>\
+                </div>\
+                \
+                <div class="form-section">\
+                    <div class="form-label">\uc0\u38382 \u39064 \u31561 \u32423 </div>\
+                    <div class="form-value">\uc0\u19968 \u33324 </div>\
+                </div>\
+                \
+                <div class="form-section">\
+                    <div class="form-label">\uc0\u25972 \u25913 \u20154 </div>\
+                    <div class="form-value">\uc0\u24352 \u19977 </div>\
+                </div>\
+                \
+                <div class="form-section">\
+                    <div class="form-label">\uc0\u25972 \u25913 \u26102 \u38388 (\u22825 )</div>\
+                    <div class="form-value">3</div>\
+                </div>\
+            </main>\
+        </div>\
+        \
+        <!-- \uc0\u24213 \u37096 \u22266 \u23450 \u21306 \u22495  -->\
+        <div class="bottom-section">\
+            <div class="tab-bar">\
+                <div class="tab" data-page="form-page">\uc0\u21333 \u25454 \u24405 \u20837 </div>\
+                <div class="tab active" data-page="chat-page">\uc0\u26045 \u24037 \u30693 \u35782 \u38382 \u31572 </div>\
+            </div>\
+            \
+            <div class="input-bar" id="chat-input">\
+                <span class="icon-camera">\uc0\u55357 \u56567 </span>\
+                <div class="input-wrapper">\
+                    <input type="text" placeholder="\uc0\u35831 \u36755 \u20837 \u24744 \u30340 \u38382 \u39064 ">\
+                </div>\
+                <span class="icon-mic">\uc0\u55356 \u57241 </span>\
+            </div>\
+            \
+            <div class="disclaimer">\uc0\u20869 \u23481 \u20026 AI\u29983 \u25104 \u65292 \u20165 \u20379 \u21442 \u32771 </div>\
+        </div>\
+    </div>\
+    \
+    <script>\
+        // Tab\uc0\u20999 \u25442 \
+        document.querySelectorAll('.tab').forEach(tab => \{\
+            tab.addEventListener('click', function() \{\
+                // \uc0\u20999 \u25442 tab\u26679 \u24335 \
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));\
+                this.classList.add('active');\
+                \
+                // \uc0\u20999 \u25442 \u39029 \u38754 \
+                const targetPage = this.getAttribute('data-page');\
+                document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));\
+                document.getElementById(targetPage).classList.add('active');\
+                \
+                // \uc0\u25511 \u21046 \u36755 \u20837 \u26639 \u26174 \u31034 \
+                const inputBar = document.getElementById('chat-input');\
+                if (targetPage === 'chat-page') \{\
+                    inputBar.style.display = 'flex';\
+                \} else \{\
+                    inputBar.style.display = 'none';\
+                \}\
+            \});\
+        \});\
+        \
+        // \uc0\u24555 \u25463 \u38382 \u39064 \u28857 \u20987 \
+        document.querySelectorAll('.quick-item').forEach(item => \{\
+            item.addEventListener('click', function() \{\
+                const input = document.querySelector('.input-wrapper input');\
+                input.value = this.textContent;\
+                input.focus();\
+            \});\
+        \});\
+    </script>\
+</body>\
+</html>}
